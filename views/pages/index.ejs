@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<%- include('../components/head') %>
+
+  <title>Home</title>
+
+  <body>
+
+    <%- include('../components/header') %>
+
+
+      <section class="home swiper" id="home">
+
+        <div class="swiper-container home-slider">
+
+          <div class="swiper-wrapper wrapper">
+            <% slides.forEach(function(slide){ %>
+              <div class="swiper-slide slide">
+                <div class="image">
+                  <img src="/img/slide/<%= slide.img %>" alt="">
+                </div>
+              </div>
+              <% }) %>
+          </div>
+
+          <div class="swiper-pagination"></div>
+
+        </div>
+
+      </section>
+
+      <div class="container bg-danger mt-5">
+        <p class="fs-5 text-white text-center">Melhores Filmes</p>
+      </div>
+
+      <section class="container">
+        <article class="row row-cols-1 row-cols-md-3 g-4">
+          <% filmes.forEach(function(filme){ %>
+            <div class="col">
+              <div class="card border-light bg-transparent mb-3">
+                <img src="/img/melhores filmes/<%= filme.image %>" alt="<%= filme.title %>" class="card-img-top">
+                <div class="card-body text-danger">
+                  <h5 class="card-title text-center">
+                    <%= filme.title %>
+                  </h5>
+                  <p class="card-text text-center">
+                    <%= filme.descricao %>
+                  </p>
+                  <div class="d-grid gap-2 col-6 mx-auto">
+                    <button class="btn btn-block btn-outline-danger">Assistir</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <% }) %>
+        </article>
+      </section>
+
+      <div class="container bg-danger mt-5">
+        <p class="fs-5 text-white text-center">Series Originais</p>
+      </div>
+
+      <section class="container">
+        <article class="row row-cols-1 row-cols-md-3 g-4">
+          <% series_originais.forEach(function(serie){ %>
+            <div class="col">
+              <div class="card border-light bg-transparent mb-3">
+                <img src="/img/serie originais/<%= serie.image %>" alt="<%= serie.title %>" class="card-img-top">
+                <div class="card-body text-danger">
+                  <h5 class="card-title text-center">
+                    <%= serie.title %>
+                  </h5>
+                  <p class="card-text text-center">
+                    <%= serie.descricao %>
+                  </p>
+                  <div class="d-grid gap-2 col-6 mx-auto">
+                    <button class="btn btn-block btn-outline-danger">Assistir</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <% }) %>
+        </article>
+      </section>
+
+      <div class="container bg-danger mt-5">
+        <p class="fs-5 text-white text-center">Series Premiadas</p>
+      </div>
+
+      <section class="container">
+        <article class="row row-cols-1 row-cols-md-3 g-4">
+          <% series_premiadas.forEach(function(serie_premiada){ %>
+            <div class="col">
+              <div class="card border-light bg-transparent mb-3">
+                <img src="/img/<%= serie_premiada.image %>" alt="<%= serie_premiada.title %>" class="card-img-top">
+                <div class="card-body text-danger">
+                  <h5 class="card-title text-center">
+                    <%= serie_premiada.title %>
+                  </h5>
+                  <p class="card-text text-center">
+                    <%= serie_premiada.descricao %>
+                  </p>
+                  <div class="d-grid gap-2 col-6 mx-auto">
+                    <button class="btn btn-block btn-outline-danger">Assistir</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <% }) %>
+        </article>
+      </section>
+
+      <%- include('../components/script') %>
+  </body>
+
+  </html>

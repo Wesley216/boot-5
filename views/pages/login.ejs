@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<%- include('../components/head') %>
+
+    <title>Login</title>
+
+    <body>
+
+        <%- include('../components/header') %>
+
+            <div class="container bg-danger mt-6">
+                <p class="fs-5 text-white text-center">Login</p>
+            </div>
+
+            <form style="margin-left: 8%;" method="post" class="row g-3 container">
+
+                <div class="form-row">
+                    <div class="col">
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="email" class="form-control" placeholder="example@gmail.com"
+                            required autofocus pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                    </div>
+
+                    <div class="col">
+                        <label for="password">Senha</label>
+                        <input id="password" name="password" class="form-control" type="password" required
+                            placeholder="Senha">
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary">Sign in</button>
+                </div>
+                <a href="/cadastrar">Cadastrar</a>
+            </form>
+
+
+            </section>
+
+            <%- include('../components/script') %>
+    </body>
+
+    </html>

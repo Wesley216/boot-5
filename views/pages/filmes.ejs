@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<%- include('../components/head') %>
+
+  <title>Filmes</title>
+
+  <body>
+
+    <%- include('../components/header') %>
+
+      <div class="container bg-danger mt-6">
+        <p class="fs-5 text-white text-center">Melhores Filmes</p>
+      </div>
+
+      <section class="container">
+        <article class="row row-cols-1 row-cols-md-3 g-4">
+          <% melhores_filmes.forEach(function(melhoresFilmes){ %>
+            <div class="col">
+              <div class="card border-light bg-transparent mb-3">
+                <img src="/img/<%= melhoresFilmes.image %>" alt="<%= melhoresFilmes.title %>" class="card-img-top">
+                <div class="card-body text-danger">
+                  <h5 class="card-title text-center">
+                    <%= melhoresFilmes.title %>
+                  </h5>
+                  <p class="card-text text-center">
+                    <%= melhoresFilmes.descricao %>
+                  </p>
+                  <div class="d-grid gap-2 col-6 mx-auto">
+                    <button class="btn btn-block btn-outline-danger">Assistir</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <% }) %>
+        </article>
+      </section>
+
+      <div class="container bg-danger mt-6">
+        <p class="fs-5 text-white text-center">Filmes Recomendados</p>
+      </div>
+
+      <section class="container">
+        <article class="row row-cols-1 row-cols-md-3 g-4">
+          <% filmes_recomendados.forEach(function(filmeRecomendado){ %>
+            <div class="col">
+              <div class="card border-light bg-transparent mb-3">
+                <img src="/img/<%= filmeRecomendado.image %>" alt="<%= filmeRecomendado.title %>" class="card-img-top">
+                <div class="card-body text-danger">
+                  <h5 class="card-title text-center">
+                    <%= filmeRecomendado.title %>
+                  </h5>
+                  <p class="card-text text-center">
+                    <%= filmeRecomendado.descricao %>
+                  </p>
+                  <div class="d-grid gap-2 col-6 mx-auto">
+                    <button class="btn btn-block btn-outline-danger">Assistir</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <% }) %>
+        </article>
+      </section>
+
+      <%- include('../components/script') %>
+  </body>
+
+  </html>
